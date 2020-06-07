@@ -15,7 +15,8 @@ state = {
 
       e.preventDefault();
       const rec = e.target.elements.recc.value;
-      try{
+   
+      
         const api_call = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${rec}`);
 
         const data = await api_call.json();
@@ -23,10 +24,8 @@ state = {
         this.setState({
              recipes: data.meals,
         });
-        }
-        catch(error){
-        return error;
-        }
+      
+    
 
   }
 componentDidMount = () => {
